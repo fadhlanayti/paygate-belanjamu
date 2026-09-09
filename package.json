@@ -1,0 +1,53 @@
+{
+  "name": "paygate-belanjamu",
+  "version": "0.1.0",
+  "description": "Official SDK for Belanjamu PayGate — payment orchestration over QRIS, E-Wallet, and Virtual Accounts.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "paygate",
+    "belanjamu",
+    "qris",
+    "payment",
+    "gateway",
+    "qris-payment"
+  ],
+  "author": "Belanjamu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadhlanayti/paygate-belanjamu"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "fetch": "not required (uses globalThis.fetch / node native fetch)"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true
+  }
+}
